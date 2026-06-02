@@ -13,6 +13,7 @@ const STATIC_IMAGES = [
   { url: null, filename: 'education-community.jpg', cat: 'Education', caption: 'Community Education' },
   { url: null, filename: 'sports-school.jpg', cat: 'Sports', caption: 'School Sports' },
   { url: null, filename: 'community-outreach.jpg', cat: 'Community', caption: 'Community Outreach' },
+  { url: null, filename: 'tree-planting.jpg', cat: 'Environmental', caption: 'Tree Planting Drive' },
   { url: null, filename: 'education-primary.jpg', cat: 'Education', caption: 'Primary Education' },
   { url: null, filename: 'sports-team-1.jpg', cat: 'Sports', caption: 'Sports Team 1' },
   { url: null, filename: 'team-leadership.jpg', cat: 'Community', caption: 'Leadership Team' },
@@ -21,7 +22,7 @@ const STATIC_IMAGES = [
   { url: null, filename: 'community-team.jpg', cat: 'Community', caption: 'Community Team' },
 ];
 
-const FILTER_CATS = ['All', 'Sports', 'Education', 'Community', 'Disability'];
+const FILTER_CATS = ['All', 'Sports', 'Education', 'Community', 'Disability', 'Environmental'];
 
 export default function Gallery({ albums = [] }) {
   const [activeCat, setActiveCat] = useState('All');

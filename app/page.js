@@ -18,6 +18,7 @@ import {
   galleryAlbumsQuery,
   newsPostsQuery,
   teamMembersQuery,
+  siteSettingsQuery,
 } from '@/sanity/lib/queries';
 
 export default async function Home() {
@@ -25,13 +26,15 @@ export default async function Home() {
   let albums = [];
   let news = [];
   let team = [];
+  let settings = null;
 
   try {
-    [events, albums, news, team] = await Promise.all([
+    [events, albums, news, team, settings] = await Promise.all([
       client.fetch(eventsQuery),
       client.fetch(galleryAlbumsQuery),
       client.fetch(newsPostsQuery),
       client.fetch(teamMembersQuery),
+      client.fetch(siteSettingsQuery),
     ]);
   } catch {
     // Gracefully degrade — show static/empty state when Sanity isn't configured yet
@@ -41,8 +44,8 @@ export default async function Home() {
     <>
       <Nav />
       <main>
-        <Hero />
-        <Mission />
+        <Hero settings={settings} />
+        <Mission settings={settings} />
         <Dockets />
         <Pillars />
         <Events events={events} />
@@ -52,7 +55,7 @@ export default async function Home() {
         {news.length > 0 && <News news={news} />}
         <Sponsors />
         <Donate />
-        <Contact />
+        <Contact settings={settings} />
       </main>
       <Footer />
     </>

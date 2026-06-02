@@ -2,16 +2,28 @@
 
 import { useState, useEffect } from 'react';
 
-const TIERS = ['$25 Supporter', '$100 Champion', '$500 Benefactor', 'Custom'];
 const CRYPTO_WALLET = 'TYjtZvpLhAttttQG6opzk8Ye8mjsBFdmec';
 
+const INDIVIDUAL_TIERS = [
+  { label: '$25 Supporter', impact: 'Funds school supplies for one child for a full term' },
+  { label: '$70 Champion', impact: 'Sponsors a youth athlete\'s training and kit for a month' },
+  { label: '$250 Benefactor', impact: 'Equips a micro-enterprise with startup tools and training' },
+];
+
+const MAJOR_TIERS = [
+  { label: '$1,000 Patron', impact: 'Funds a full community health outreach day' },
+  { label: '$5,000 Visionary', impact: 'Launches a complete programme in a target community' },
+  { label: 'Custom', impact: 'Every amount, big or small, creates lasting change' },
+];
+
+const ALL_TIERS = [...INDIVIDUAL_TIERS, ...MAJOR_TIERS];
+
 export default function Donate() {
-  const [activeTier, setActiveTier] = useState('$100 Champion');
+  const [activeTier, setActiveTier] = useState('$70 Champion');
   const [copied, setCopied] = useState(false);
   const [donateHref, setDonateHref] = useState('#');
 
   useEffect(() => {
-    // Reconstruct client-side so the address never appears as a literal in static HTML
     const addr = 'brahamsfoundation2' + '@' + 'gmail' + '.com';
     setDonateHref('mailto:' + addr + '?subject=Donation%20Enquiry');
   }, []);
@@ -21,6 +33,8 @@ export default function Donate() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
+
+  const activeTierData = ALL_TIERS.find((t) => t.label === activeTier);
 
   return (
     <section className="donate" id="donate">
@@ -34,16 +48,41 @@ export default function Donate() {
           </p>
 
           <div className="donate-tiers">
-            {TIERS.map((t) => (
-              <button
-                key={t}
-                className={`donate-tier${activeTier === t ? ' active' : ''}`}
-                onClick={() => setActiveTier(t)}
-              >
-                {t}
-              </button>
-            ))}
+            <div className="donate-tier-group">
+              <span className="donate-tier-label">INDIVIDUAL GIVING</span>
+              <div className="donate-tier-row">
+                {INDIVIDUAL_TIERS.map((t) => (
+                  <button
+                    key={t.label}
+                    className={`donate-tier${activeTier === t.label ? ' active' : ''}`}
+                    onClick={() => setActiveTier(t.label)}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="donate-tier-group">
+              <span className="donate-tier-label">MAJOR GIVING</span>
+              <div className="donate-tier-row">
+                {MAJOR_TIERS.map((t) => (
+                  <button
+                    key={t.label}
+                    className={`donate-tier${activeTier === t.label ? ' active' : ''}`}
+                    onClick={() => setActiveTier(t.label)}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
+
+          {activeTierData && (
+            <p className="donate-impact">
+              <span className="donate-impact-icon">✦</span> {activeTierData.impact}
+            </p>
+          )}
 
           <div className="donate-ctas">
             <a href={donateHref} className="btn-primary">

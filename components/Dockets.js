@@ -20,10 +20,10 @@ const dockets = [
   },
   {
     num: '03',
-    title: 'Cultural Festivals, Investments & Initiatives',
-    badge: 'Cultural Heritage',
-    filename: 'community-outreach.jpg',
-    desc: 'Celebrating and preserving the rich cultural identity of our communities. Through festivals, arts, and strategic cultural investments, we build pride, cohesion, and economic opportunities rooted in heritage.',
+    title: 'Environmental Stewardship',
+    badge: 'Environmental Conservation',
+    filename: 'tree-planting.jpg',
+    desc: 'Championing environmental conservation through tree planting, clean-up drives, and climate education. We equip communities to protect their natural resources and build a greener, more sustainable future.',
   },
 ];
 
@@ -66,7 +66,6 @@ export default function Dockets() {
               <div className="docket-body">
                 <h3 className="docket-title">{d.title}</h3>
                 <p className="docket-desc">{d.desc}</p>
-                <span className="docket-arrow">Learn More →</span>
               </div>
             </div>
           ))}

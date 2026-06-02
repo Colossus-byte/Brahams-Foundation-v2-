@@ -24,18 +24,10 @@ export default function Team({ team = [] }) {
         <div className="team-grid">
           <div className="team-photos fade-up">
             <div className="team-photo-wrap">
-              {/* Placeholder — replace with <img src="team-disability-outreach.jpg"> once uploaded */}
-              <ImagePlaceholder
-                label="team-disability-outreach.jpg"
-                style={{ width: '100%', height: '360px' }}
-              />
-              <div className="team-photo-caption">Disability Outreach Programme</div>
-            </div>
-            <div className="team-photo-wrap">
               {/* Placeholder — replace with <img src="team-leadership.jpg"> once uploaded */}
               <ImagePlaceholder
                 label="team-leadership.jpg"
-                style={{ width: '100%', height: '220px' }}
+                style={{ width: '100%', height: '360px' }}
               />
               <div className="team-photo-caption">Foundation Leadership</div>
             </div>
@@ -64,7 +56,6 @@ export default function Team({ team = [] }) {
               return (
                 <div key={member._id} className="team-member-card">
                   {photoUrl ? (
-                    // Sanity CDN images use Next.js Image for optimisation
                     <Image
                       src={photoUrl}
                       alt={member.name}

@@ -6,14 +6,14 @@ const bars = [
   { label: 'Sports & Talent', pct: 78 },
   { label: 'Economic Empowerment', pct: 65 },
   { label: 'Girl Child & Education', pct: 72 },
-  { label: 'Cultural Heritage', pct: 55 },
   { label: 'Disability Inclusion', pct: 60 },
+  { label: 'Environmental Stewardship', pct: 45 },
 ];
 
 const stats = [
-  { num: '3K+', label: 'Lives Impacted' },
-  { num: '15+', label: 'Active Programs' },
-  { num: '8+', label: 'Partnerships' },
+  { num: '500+', label: 'Lives Impacted' },
+  { num: '5', label: 'Active Programs' },
+  { num: '4+', label: 'Partnerships' },
   { num: '100%', label: 'Community' },
 ];
 

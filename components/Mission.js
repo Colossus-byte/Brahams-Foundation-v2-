@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import ImagePlaceholder from './ImagePlaceholder';
 
-export default function Mission() {
+export default function Mission({ settings }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -44,13 +44,17 @@ export default function Mission() {
             <span className="section-label">Our Purpose</span>
             <h2 className="mission-title">Built on Purpose,<br />Driven by People</h2>
             <p className="mission-body">
-              Brahams Foundation is a globally-focused Kenyan NGO rooted in Ugenya, Siaya County.
-              We champion talent development through sports, advance girl child education and empowerment,
-              foster cultural pride, and create economic pathways for individuals and communities.
-              <br /><br />
-              We believe every child, especially girls, deserves access to quality education, safe spaces,
-              and mentorship. Our disability inclusion programmes ensure no one is left behind, while our
-              economic initiatives unlock sustainable livelihoods across the region and beyond.
+              {settings?.missionText || (
+                <>
+                  Brahams Foundation is a globally-focused Kenyan NGO rooted in Ugenya, Siaya County.
+                  We champion talent development through sports, advance girl child education and empowerment,
+                  foster cultural pride, and create economic pathways for individuals and communities.
+                  <br /><br />
+                  We believe every child, especially girls, deserves access to quality education, safe spaces,
+                  and mentorship. Our disability inclusion programmes ensure no one is left behind, while our
+                  economic initiatives unlock sustainable livelihoods across the region and beyond.
+                </>
+              )}
             </p>
 
             <div className="mission-cards">

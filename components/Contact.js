@@ -21,7 +21,7 @@ const SOCIALS = [
   { icon: '▶', label: 'YouTube', href: 'https://youtube.com/@brahamsfoundationmedia2131' },
 ];
 
-export default function Contact() {
+export default function Contact({ settings }) {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', organisation: '', interest: '', message: '',
@@ -53,7 +53,9 @@ export default function Contact() {
                 <div className="contact-info-icon">📍</div>
                 <div>
                   <div className="contact-info-label">Location</div>
-                  <div className="contact-info-value">Nyasrek Mall, Ukwala, Ugenya, Siaya County, Kenya</div>
+                  <div className="contact-info-value">
+                    {settings?.address || 'Nyasrek Mall, Ukwala, Ugenya, Siaya County, Kenya'}
+                  </div>
                 </div>
               </div>
               <div className="contact-info-card">
@@ -61,7 +63,10 @@ export default function Contact() {
                 <div>
                   <div className="contact-info-label">Phone</div>
                   <div className="contact-info-value">
-                    <a href="tel:+254794432183">+254 794 432 183</a>
+                    {settings?.phone
+                      ? <a href={`tel:${settings.phone.replace(/\s/g, '')}`}>{settings.phone}</a>
+                      : <a href="tel:+254794432183">+254 794 432 183</a>
+                    }
                   </div>
                 </div>
               </div>

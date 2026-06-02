@@ -33,25 +33,11 @@ export default function Nav() {
       <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
         <div className="nav-inner">
           <a href="#" className="nav-logo">
-            {/* Logo placeholder — replace div with <img> once logo.jpg is available */}
-            <div
+            <img
+              src="https://raw.githubusercontent.com/Colossus-byte/Brahams-Foundation-v2-/main/logo.jpg"
+              alt="Brahams Foundation"
               className="nav-logo-img"
-              style={{
-                background: 'rgba(201,168,76,0.1)',
-                border: '2px solid rgba(201,168,76,0.55)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontFamily: 'var(--font-cormorant, serif)',
-                fontSize: '20px',
-                fontWeight: 700,
-                color: 'var(--gold)',
-                flexShrink: 0,
-              }}
-            >
-              B
-            </div>
+            />
             <span className="nav-logo-text">
               Brahams Foundation
               <span className="nav-logo-sub">Empowering Globally</span>

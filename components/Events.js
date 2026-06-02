@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const STATUS_TABS = ['All', 'Upcoming', 'Past'];
-const CATEGORIES = ['All', 'Sports', 'Education', 'Community', 'Cultural', 'Health', 'Women', 'Disability'];
+const CATEGORIES = ['All', 'Sports', 'Education', 'Community', 'Environmental', 'Health', 'Women', 'Disability'];
 
 function formatDate(dateStr) {
   if (!dateStr) return '';

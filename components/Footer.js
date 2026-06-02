@@ -18,25 +18,11 @@ export default function Footer() {
           {/* Brand column */}
           <div className="footer-brand">
             <a href="#" className="footer-logo">
-              {/* Logo placeholder — replace div with <img src="logo.jpg"> once uploaded */}
-              <div
+              <img
+                src="https://raw.githubusercontent.com/Colossus-byte/Brahams-Foundation-v2-/main/logo.jpg"
+                alt="Brahams Foundation"
                 className="footer-logo-img"
-                style={{
-                  background: 'rgba(201,168,76,0.1)',
-                  border: '2px solid rgba(201,168,76,0.45)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontFamily: 'var(--font-cormorant, serif)',
-                  fontSize: '22px',
-                  fontWeight: 700,
-                  color: 'var(--gold)',
-                  flexShrink: 0,
-                }}
-              >
-                B
-              </div>
+              />
               <span className="footer-logo-name">Brahams Foundation</span>
             </a>
             <p className="footer-mission">
@@ -67,7 +53,7 @@ export default function Footer() {
           <div>
             <h4 className="footer-col-title">Our Work</h4>
             <ul className="footer-links">
-              {['Sports', 'Social Economic Empowerment', 'Cultural Festivals', 'Girl Child Empowerment', 'Disability Inclusion'].map((l) => (
+              {['Sports', 'Social Economic Empowerment', 'Environmental Stewardship', 'Girl Child Empowerment', 'Disability Inclusion'].map((l) => (
                 <li key={l}><a href="#dockets" className="footer-link">{l}</a></li>
               ))}
             </ul>
@@ -110,9 +96,6 @@ export default function Footer() {
           <p className="footer-copyright">
             © {year} Brahams Foundation. All rights reserved. · Nyasrek Mall, Ukwala, Ugenya, Kenya
           </p>
-          <div className="footer-badge">
-            International Standard · Empowering Globally
-          </div>
         </div>
       </div>
     </footer>
