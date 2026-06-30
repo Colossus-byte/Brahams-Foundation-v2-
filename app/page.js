@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Mission from '@/components/Mission';
 import Dockets from '@/components/Dockets';
 import Pillars from '@/components/Pillars';
+import EducationSponsor from '@/components/EducationSponsor';
 import Events from '@/components/Events';
 import Impact from '@/components/Impact';
 import Gallery from '@/components/Gallery';
@@ -48,6 +49,7 @@ export default async function Home() {
         <Mission settings={settings} />
         <Dockets />
         <Pillars />
+        <EducationSponsor />
         <Events events={events} />
         <Impact />
         <Gallery albums={albums} />
